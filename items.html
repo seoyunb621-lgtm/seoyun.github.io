@@ -16,7 +16,6 @@ body{
     overflow-x:hidden;
 }
 
-/* ✅ 배경 노이즈 */
 body::after{
     content:"";
     position:fixed;
@@ -28,7 +27,7 @@ body::after{
     opacity:0.4;
 }
 
-/* ✅ 손그림 장식 */
+
 body::before{
     content:"";
     position:fixed;
@@ -57,7 +56,7 @@ body::before{
     opacity:0.75;
 }
 
-/* ===== 헤더 ===== */
+
 .header{
     display:flex;
     justify-content:space-between;
@@ -89,7 +88,7 @@ body::before{
     font-weight:bold;
 }
 
-/* ===== 타이틀 ===== */
+
 .items-title{
     font-family:'Pacifico', cursive;
     font-size:40px;
@@ -105,14 +104,14 @@ body::before{
     color:#6b5c5c;
 }
 
-/* ===== 래퍼 ===== */
+
 .items-wrap{
     max-width:1100px;
     margin:0 auto 80px;
     padding:0 40px 40px;
 }
 
-/* ===== 지그재그 섹션 ===== */
+
 .item-section{
     display:flex;
     align-items:center;
@@ -124,19 +123,19 @@ body::before{
     flex-direction:row-reverse;
 }
 
-/* ✅ 이미지 박스 → 배경 제거 + 빨간 테두리만 */
+
 .item-img-box{
-    flex:0 0 300px;           /* ✅ 박스 크기 살짝 축소 */
+    flex:0 0 300px;          
     height:300px;
     border-radius:14px;
     overflow:hidden;
-    background:transparent;  /* ✅ 흰 배경 제거 */
+    background:transparent;  
     border:1px solid #B22222;
 }
 
-/* ✅ 이미지 크기 조금 더 작게 */
+
 .item-img-box img{
-    width:85%;                 /* ✅ 기존 100% → 줄임 */
+    width:85%;               
     height:auto;
     display:block;
     margin:30px auto 0;
@@ -144,12 +143,11 @@ body::before{
     transition:transform 0.35s ease;
 }
 
-/* ✅ 호버 확대 */
+
 .item-img-box:hover img{
     transform:scale(1.1);
 }
 
-/* ===== 텍스트 ===== */
 .item-text{
     flex:1;
     line-height:1.9;
@@ -171,7 +169,7 @@ body::before{
     margin-bottom:10px;
 }
 
-/* ===== 반응형 ===== */
+
 @media (max-width:900px){
     .items-wrap{ padding:0 20px 40px; }
 
@@ -203,9 +201,9 @@ body::before{
 
 <body>
 
-<!-- ✅ 헤더 -->
+
 <div class="header">
-    <a href="main.html">
+    <a href="index.html">
         <img src="logo1.png" class="logo-img" alt="logo">
     </a>
 
@@ -223,7 +221,7 @@ body::before{
 
 <div class="items-wrap">
 
-    <!-- item1 -->
+    
     <section class="item-section">
         <div class="item-img-box">
             <img src="item1.png" alt="Item 1">
@@ -244,7 +242,7 @@ body::before{
         </div>
     </section>
 
-    <!-- item2 -->
+ 
     <section class="item-section">
         <div class="item-img-box">
             <img src="item2.png" alt="Item 2">
@@ -262,7 +260,7 @@ body::before{
         </div>
     </section>
 
-    <!-- item3 -->
+
     <section class="item-section">
         <div class="item-img-box">
             <img src="item3.png" alt="Item 3">
