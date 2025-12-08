@@ -17,7 +17,7 @@ body{
     transition:background 0.3s ease;
 }
 
-/* ✅ 원래 노이즈 그대로 */
+
 body::after{
     content:"";
     position:fixed;
@@ -29,7 +29,7 @@ body::after{
     opacity:0.3;
 }
 
-/* ✅ 손그림 그대로 */
+
 body::before{
     content:"";
     position:fixed;
@@ -75,12 +75,10 @@ body::before{
     opacity:0.7;
 }
 
-/* ✅ 썸네일 호버 시 배경 */
 body.bg-hover{
     background:#FFF1EC;
 }
 
-/* ✅ ✅ ✅ 헤더 (프롤로그와 동일한 로고 구조) */
 .header{
     display:flex;
     justify-content:space-between;
@@ -94,20 +92,19 @@ body.bg-hover{
     background-size:3px 3px;
 }
 
-/* ✅ 로고 */
 .logo-link{
     display:flex;
     align-items:center;
 }
 
 .logo-img{
-    height:36px;   /* 프롤로그랑 동일 */
+    height:36px;  
     width:auto;
     cursor:pointer;
     transition:opacity 0.2s ease;
 }
 
-/* ✅ 메뉴 */
+
 .menu{
     display:flex;
     gap:25px;
@@ -131,7 +128,6 @@ body.bg-hover{
     padding-top:40px;
 }
 
-/* ✅ 메인 이미지 */
 .hero{
     width:520px;
     height:650px;
@@ -194,7 +190,7 @@ body.bg-hover{
 
 <div class="header">
 
-    <!-- ✅ 로고 클릭 시 main.html (자기 자신) -->
+    
     <div class="top-logo">
         <a href="main.html" class="logo-link">
             <img src="logo1.png" alt="로고" class="logo-img">
