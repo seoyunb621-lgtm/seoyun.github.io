@@ -16,7 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 배경 노이즈 */
+
 body::after{
     content:"";
     position:fixed;
@@ -28,7 +28,7 @@ body::after{
     opacity:0.4;
 }
 
-/* 손그림 장식 */
+
 body::before{
     content:"";
     position:fixed;
@@ -55,7 +55,7 @@ body::before{
     opacity:0.75;
 }
 
-/* ===== 헤더 ===== */
+
 .header{
     display:flex;
     justify-content:space-between;
@@ -75,7 +75,6 @@ body::before{
 .menu a{text-decoration:none; color:#555;}
 .menu a:hover{color:#c40000; font-weight:bold;}
 
-/* ===== 타이틀 ===== */
 .music-title{
     font-family:'Pacifico', cursive;
     font-size:40px;
@@ -91,14 +90,14 @@ body::before{
     color:#6b5c5c;
 }
 
-/* ===== 래퍼 ===== */
+
 .music-wrap{
     max-width:1100px;
     margin:0 auto 80px;
     padding:0 40px 40px;
 }
 
-/* ===== 트랙 (지그재그) ===== */
+
 .track{
     display:flex;
     align-items:center;
@@ -110,7 +109,7 @@ body::before{
     flex-direction:row-reverse;
 }
 
-/* ✅ 자켓 박스 : 테두리 완전 제거 */
+
 .cover-box{
     flex:0 0 260px;
     height:260px;
@@ -133,7 +132,7 @@ body::before{
     transform:scale(1.08);
 }
 
-/* 텍스트 */
+
 .track-info{
     flex:1;
     font-size:13px;
@@ -155,7 +154,7 @@ body::before{
     margin-bottom:10px;
 }
 
-/* ✅ 플레이어 완전 숨김 */
+
 .track-audio{
     display:none;
 }
@@ -164,7 +163,7 @@ audio{
     display:none;
 }
 
-/* 반응형 */
+
 @media (max-width:900px){
     .music-wrap{padding:0 20px 40px;}
 
@@ -188,7 +187,7 @@ audio{
 <body>
 
 <div class="header">
-    <a href="main.html">
+    <a href="index.html">
         <img src="logo1.png" class="logo-img">
     </a>
 
@@ -206,7 +205,7 @@ audio{
 
 <div class="music-wrap">
 
-    <!-- Track 1 -->
+
     <section class="track">
         <div class="cover-box">
             <img src="music1.png">
@@ -222,7 +221,7 @@ audio{
         </div>
     </section>
 
-    <!-- Track 2 -->
+
     <section class="track">
         <div class="cover-box">
             <img src="music2.png">
@@ -236,7 +235,7 @@ audio{
         </div>
     </section>
 
-    <!-- Track 3 -->
+
     <section class="track">
         <div class="cover-box">
             <img src="music3.png">
