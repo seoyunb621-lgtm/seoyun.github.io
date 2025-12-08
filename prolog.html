@@ -16,7 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* ✅ 메인 노이즈 배경 (조금 강하게) */
+
 body::after{
     content:"";
     position:fixed;
@@ -28,7 +28,7 @@ body::after{
     opacity:0.45;
 }
 
-/* ===== 헤더 (은은한 노이즈 + 로고) ===== */
+
 .header{
     display:flex;
     justify-content:space-between;
@@ -42,7 +42,7 @@ body::after{
     height:50px;
 }
 
-/* ✅ 로고 링크 */
+
 .logo-link{
     display:flex;
     align-items:center;
@@ -73,7 +73,7 @@ body::after{
     font-weight:bold;
 }
 
-/* ===== 전체 레이아웃 ===== */
+
 .prolog-wrap{
     width:100%;
     max-width:1100px;
@@ -86,7 +86,7 @@ body::after{
     position:relative;
 }
 
-/* ✅ 영문 Prolog 타이틀 */
+
 .prolog-title{
     position:absolute;
     top:-65px;
@@ -98,7 +98,7 @@ body::after{
     letter-spacing:2px;
 }
 
-/* ✅ 글 영역 */
+
 .prolog-text{
     width:480px;
     font-size:13px;
@@ -113,7 +113,7 @@ body::after{
     margin-bottom:24px;
 }
 
-/* ✅ 점 (...) */
+
 .dots{
     text-align:center;
     margin-top:36px;
@@ -122,7 +122,7 @@ body::after{
     line-height:1.6;
 }
 
-/* ✅ 이미지 영역 */
+
 .prolog-img{
     width:420px;
     height:420px;
@@ -140,7 +140,6 @@ body::after{
     filter:brightness(0.92) saturate(0.88);
 }
 
-/* ===== 반응형 ===== */
 @media (max-width: 900px){
     .prolog-wrap{
         flex-direction:column-reverse;
@@ -177,9 +176,9 @@ body::after{
 <body>
 
 <div class="header">
-    <!-- ✅ 로고 클릭 시 main.html 이동 -->
+    
     <div class="top-logo">
-        <a href="main.html" class="logo-link">
+        <a href="index.html" class="logo-link">
             <img src="logo1.png" alt="로고" class="logo-img">
         </a>
     </div>
@@ -195,10 +194,10 @@ body::after{
 
 <div class="prolog-wrap">
 
-    <!-- Prolog 타이틀 -->
+   
     <div class="prolog-title">Prolog</div>
 
-    <!-- 글 영역 -->
+  
     <div class="prolog-text">
         <p>
             이 웹사이트는 스물한 살의 마지막을 지나고 있는 나의 기록입니다.  
@@ -234,7 +233,7 @@ body::after{
         </div>
     </div>
 
-    <!-- 이미지 영역 -->
+   
     <div class="prolog-img">
         <img src="prolog.png" alt="프롤로그 이미지">
     </div>
