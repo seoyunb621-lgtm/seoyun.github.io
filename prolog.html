@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Prolog</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+    font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:#f3eee6;
+    color:#333;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* ✅ 메인 노이즈 배경 (조금 강하게) */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,0.22) 1px, transparent 1px);
+    background-size:2px 2px;
+    opacity:0.45;
+}
+
+/* ===== 헤더 (은은한 노이즈 + 로고) ===== */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    border-bottom:1px solid rgba(178,34,34,0.4);
+    background:
+      rgba(240,236,225,0.96),
+      radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px);
+    background-size:3px 3px;
+    height:50px;
+}
+
+/* ✅ 로고 링크 */
+.logo-link{
+    display:flex;
+    align-items:center;
+}
+
+.logo-img{
+    height:36px;
+    width:auto;
+    cursor:pointer;
+    transition:opacity 0.2s ease;
+}
+
+
+.menu{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+    letter-spacing:0.03em;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#555;
+}
+
+.menu a:hover{
+    color:#c40000;
+    font-weight:bold;
+}
+
+/* ===== 전체 레이아웃 ===== */
+.prolog-wrap{
+    width:100%;
+    max-width:1100px;
+    margin:110px auto 0 auto;
+    padding:0 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:80px;
+    position:relative;
+}
+
+/* ✅ 영문 Prolog 타이틀 */
+.prolog-title{
+    position:absolute;
+    top:-65px;
+    left:5px;
+    font-family:'Pacifico', cursive;
+    font-size:44px;
+    color:#B22222;
+    opacity:0.95;
+    letter-spacing:2px;
+}
+
+/* ✅ 글 영역 */
+.prolog-text{
+    width:480px;
+    font-size:13px;
+    line-height:1.9;
+}
+
+.prolog-text p:first-child{
+    margin-top:60px;
+}
+
+.prolog-text p{
+    margin-bottom:24px;
+}
+
+/* ✅ 점 (...) */
+.dots{
+    text-align:center;
+    margin-top:36px;
+    color:#999;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* ✅ 이미지 영역 */
+.prolog-img{
+    width:420px;
+    height:420px;
+    background:#eee;
+    overflow:hidden;
+    border-radius:14px;
+    margin-top:60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.prolog-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.92) saturate(0.88);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 900px){
+    .prolog-wrap{
+        flex-direction:column-reverse;
+        align-items:center;
+        padding:0 25px;
+        gap:40px;
+        margin-top:90px;
+    }
+
+    .prolog-title{
+        position:static;
+        margin-bottom:18px;
+        text-align:center;
+    }
+
+    .prolog-text{
+        width:100%;
+        text-align:center;
+    }
+
+    .prolog-img{
+        width:100%;
+        height:300px;
+        margin-top:20px;
+    }
+
+    .prolog-text p:first-child{
+        margin-top:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <!-- ✅ 로고 클릭 시 main.html 이동 -->
+    <div class="top-logo">
+        <a href="main.html" class="logo-link">
+            <img src="logo1.png" alt="로고" class="logo-img">
+        </a>
+    </div>
+
+    <div class="menu">
+        <a href="main.html">prolog</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="items.html">Items</a>
+        <a href="music.html">Music</a>
+        <a href="my.html">My</a>
+    </div>
+</div>
+
+<div class="prolog-wrap">
+
+    <!-- Prolog 타이틀 -->
+    <div class="prolog-title">Prolog</div>
+
+    <!-- 글 영역 -->
+    <div class="prolog-text">
+        <p>
+            이 웹사이트는 스물한 살의 마지막을 지나고 있는 나의 기록입니다.  
+            아직도 많이 서툴고, 자주 흔들리지만  
+            그럼에도 불구하고 지금 이 순간의 나를 남기고 싶어 이 공간을 만들었습니다.
+        </p>
+
+        <p>
+            시간이 흐르면서 조금씩 변해가는 취향과 감정들,  
+            어제와는 다른 오늘의 마음,  
+            아무렇지 않게 지나쳤던 순간들이 문득 의미가 되어 돌아오는 날들도 있습니다.  
+            나는 그런 변화들이 사라지지 않길 바라며 이곳에 담아두고 싶었습니다.
+        </p>
+
+        <p>
+            매일 스쳐 지나가는 사소한 물건들,  
+            이어폰 너머로 흘러나오던 음악,  
+            이유 없이 마음이 가라앉거나 괜히 설레던 감정들.  
+            어쩌면 그런 것들이야말로 지금의 나를 가장 솔직하게 보여주는 조각인지도 모릅니다.
+        </p>
+
+        <p>
+            이 웹사이트는 그 작은 조각들을 한곳에 모아,  
+            지금의 나를 조용히 기록해 두는 작은 아카이브입니다.  
+            언젠가 이 시간을 다시 마주하게 될 나에게,  
+            그리고 지금의 나 자신에게 남기는 조심스러운 이야기입니다.
+        </p>
+
+        <div class="dots">
+            .
+            <br>.
+            <br>.
+        </div>
+    </div>
+
+    <!-- 이미지 영역 -->
+    <div class="prolog-img">
+        <img src="prolog.png" alt="프롤로그 이미지">
+    </div>
+
+</div>
+
+</body>
+</html>

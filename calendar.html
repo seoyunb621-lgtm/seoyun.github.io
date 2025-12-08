@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Calendar</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+    font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:#f3eee6;
+    color:#333;
+    position:relative;
+    overflow-x:hidden;
+}
+
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,0.22) 1px, transparent 1px);
+    background-size:2px 2px;
+    opacity:0.45;
+}
+
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:
+        url("st1.png"),
+        url("st2.png"),
+        url("st3.png"),
+        url("st4.png"),
+        url("st5.png"),
+        url("st6.png"),
+        url("st7.png"),
+        url("st1.png"),
+        url("st3.png"),
+        url("st5.png"),
+        url("st7.png");
+    background-repeat:no-repeat;
+    background-position:
+        6% 12%,   
+        92% 15%,  
+        12% 40%,  
+        88% 42%,  
+        10% 72%,  
+        90% 74%,  
+        18% 88%,  
+        30% 86%,  
+        70% 85%,  
+        45% 50%,  
+        82% 90%;  
+    background-size:
+        55px,
+        35px,
+        80px,
+        70px,
+        45px,
+        60px,
+        90px,
+        40px,
+        75px,
+        50px,
+        65px;
+    opacity:0.85;
+}
+
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    border-bottom:1px solid rgba(178,34,34,0.4);
+    height:50px;
+    background:
+      rgba(240,236,225,0.96),
+      radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px);
+    background-size:3px 3px;
+}
+
+.logo-img{
+    height:36px;
+    cursor:pointer;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#555;
+}
+
+.menu a:hover{
+    color:#c40000;
+    font-weight:bold;
+}
+
+
+.calendar-title{
+    font-family:'Pacifico', cursive;
+    font-size:40px;
+    color:#B22222;
+    text-align:center;
+    margin:48px 0 16px;
+}
+
+
+.calendar-wrap{
+    display:flex;
+    justify-content:center;
+}
+
+.calendar{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-template-rows:36px repeat(5, 95px); /* 요일 + 5주 */
+    width:520px;
+    border:1px solid #B22222;
+    background:rgba(255,255,255,0.2);
+}
+
+.cell{
+    border:1px solid #B22222;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding:6px;
+    background:transparent;
+}
+
+.item1-img{
+    transform: translateY(-8px);
+}
+
+
+.cell.day{
+    font-family:'Pacifico', cursive;
+    font-size:17px;
+    color:#B22222;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.date-num{
+    font-family:'Pacifico', cursive;
+    font-size:14px;
+    color:#B22222;
+    margin-bottom:4px;
+}
+
+
+.cell img{
+    width:75%;
+    align-self:center;
+    transition:transform 0.25s ease;
+    cursor:pointer;
+}
+
+.cell img:hover{
+    transform:scale(1.18);
+}
+
+
+.cell.bday{
+    position:relative;
+}
+
+.cell img.bday-img{
+    width:110%;
+}
+
+.bday-text{
+    position:absolute;
+    left:50%;
+    bottom:6px;
+    transform:translateX(-50%);
+    font-family:'Pacifico', cursive;
+    font-size:16px;
+    color:#B22222;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="main.html">
+        <img src="logo1.png" class="logo-img" alt="logo">
+    </a>
+
+    <div class="menu">
+        <a href="prolog.html">prolog</a>
+        <a href="calendar.html"><b>Calendar</b></a>
+        <a href="items.html">Items</a>
+        <a href="music.html">Music</a>
+        <a href="my.html">My</a>
+    </div>
+</div>
+
+<div class="calendar-title">Calendar of me!</div>
+
+<div class="calendar-wrap">
+<div class="calendar">
+
+
+    <div class="cell day">MON</div>
+    <div class="cell day">TUE</div>
+    <div class="cell day">WED</div>
+    <div class="cell day">THU</div>
+    <div class="cell day">FRI</div>
+
+
+    <div class="cell"><div class="date-num">1</div></div>
+    <div class="cell"><div class="date-num">2</div></div>
+
+    <div class="cell bday">
+        <div class="date-num">3</div>
+        <img src="stbirthday.png" class="bday-img" alt="My Birthday">
+        <div class="bday-text">My Birthday!</div>
+    </div>
+
+    <div class="cell"><div class="date-num">4</div></div>
+    <div class="cell"><div class="date-num">5</div></div>
+
+
+    <div class="cell"><div class="date-num">6</div></div>
+    <div class="cell">
+        <div class="date-num">7</div>
+        <img src="item1.png" class="item1-img" alt="item1">
+    </div>
+    <div class="cell"><div class="date-num">8</div></div>
+    <div class="cell"><div class="date-num">9</div></div>
+    <div class="cell"><div class="date-num">10</div></div>
+
+  
+    <div class="cell"><div class="date-num">11</div></div>
+    <div class="cell"><div class="date-num">12</div></div>
+    <div class="cell">
+        <div class="date-num">13</div>
+        <img src="item2.png" alt="item2">
+    </div>
+    <div class="cell"><div class="date-num">14</div></div>
+    <div class="cell"><div class="date-num">15</div></div>
+
+
+    <div class="cell"><div class="date-num">16</div></div>
+    <div class="cell"><div class="date-num">17</div></div>
+    <div class="cell"><div class="date-num">18</div></div>
+    <div class="cell">
+        <div class="date-num">19</div>
+        <img src="item3.png" alt="item3">
+    </div>
+    <div class="cell"><div class="date-num">20</div></div>
+
+    <div class="cell"><div class="date-num">21</div></div>
+    <div class="cell"><div class="date-num">22</div></div>
+    <div class="cell"><div class="date-num">23</div></div>
+    <div class="cell"><div class="date-num">24</div></div>
+    <div class="cell"><div class="date-num">25</div></div>
+
+</div>
+</div>
+
+</body>
+</html>

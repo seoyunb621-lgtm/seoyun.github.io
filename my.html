@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>My</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:#c90019;
+    color:#f3eee6;
+    position:relative;
+    overflow-x:hidden;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,0.25) 1px, transparent 1px);
+    background-size:2px 2px;
+    opacity:0.45;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:
+        url("st1.png"),
+        url("st2.png"),
+        url("st3.png"),
+        url("st4.png"),
+        url("st5.png"),
+        url("st6.png"),
+        url("st7.png");
+    background-repeat:no-repeat;
+    background-position:
+        10% 55%,
+        85% 18%,
+        12% 45%,
+        80% 50%,
+        35% 90%,
+        60% 85%,
+        90% 95%;
+    background-size:
+        30px,
+        50px,
+        60px,
+        55px,
+        65px,
+        45px,
+        60px;
+    filter:brightness(0) invert(1);
+    opacity:0.8;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    border-bottom:1px solid rgba(243,238,230,0.7);
+    height:50px;
+}
+
+.logo-img{height:36px;}
+
+.menu{display:flex;gap:25px;font-size:14px;}
+.menu a{text-decoration:none;color:#f3eee6;opacity:.85;}
+.menu a:hover{opacity:1;font-weight:bold;}
+.menu a.current{font-weight:bold;}
+
+.info-wrap{
+    max-width:1100px;
+    margin:80px auto 120px;
+    padding:0 40px;
+    text-align:left;
+}
+
+.my-block{
+    max-width:500px;
+}
+
+.my-title{
+    font-family:'Pacifico',cursive;
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.my-meta{
+    font-size:12px;
+    letter-spacing:.06em;
+    margin-bottom:18px;
+    opacity:.9;
+}
+
+.my-text{
+    font-size:13px;
+    line-height:1.9;
+    margin-bottom:12px;
+}
+
+.mood{
+    margin-top:18px;
+}
+
+.mood-label{
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    opacity:.9;
+}
+
+.mood-icons{
+    display:flex;
+    gap:10px;
+    font-size:20px;
+}
+
+/* ✅ 동그라미 완전 제거 */
+.mood-icon{
+    width:auto;
+    height:auto;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+/* ✅ 그림자 제거 */
+.main-image{
+    width:420px;
+    margin:40px auto 0;
+    position:relative;
+}
+
+.main-image img{
+    width:100%;
+    height:auto;
+    display:block;
+    transform:translateY(-25px);
+    filter:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="main.html"><img src="logo2.png" class="logo-img" alt="logo"></a>
+    <div class="menu">
+        <a href="prolog.html">prolog</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="items.html">Items</a>
+        <a href="music.html">Music</a>
+        <a href="my.html" class="current">My</a>
+    </div>
+</div>
+
+<div class="info-wrap">
+    <section class="my-block">
+        <h1 class="my-title">My</h1>
+        <div class="my-meta">2005.10.23 · Daegu, Korea</div>
+
+        <p class="my-text">
+            스물의 내가 되고 나서야 조금씩 나를 돌아보기 시작했다.  
+            아무 의미 없이 지나가던 순간들도 지금의 나를 만든 조각들이라는 생각이 들어  
+            이 작은 공간에 나의 시간을 기록해 보기로 했다.
+        </p>
+        <p class="my-text">
+            좋아하는 것, 자주 듣는 노래, 자주 걷는 길,  
+            사소하게 흘려보냈던 하루의 기분들.  
+            그런 순간들을 모은 나의 작은 이야기들이다.
+        </p>
+
+        <div class="mood">
+            <div class="mood-label">오늘의 기분</div>
+            <div class="mood-icons">
+                <div class="mood-icon">🙂</div>
+                <div class="mood-icon">😊</div>
+                <div class="mood-icon">🌤</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-image">
+        <img src="info.png" alt="my image">
+    </div>
+</div>
+
+</body>
+</html>

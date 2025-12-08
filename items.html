@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Items</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+    font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:#f3eee6;
+    color:#342f2f;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* ✅ 배경 노이즈 */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,0.22) 1px, transparent 1px);
+    background-size:2px 2px;
+    opacity:0.4;
+}
+
+/* ✅ 손그림 장식 */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:
+        url("st1.png"),
+        url("st2.png"),
+        url("st3.png"),
+        url("st4.png"),
+        url("st5.png"),
+        url("st6.png"),
+        url("st7.png");
+    background-repeat:no-repeat;
+    background-position:
+        5% 20%,
+        95% 18%,
+        12% 70%,
+        88% 68%,
+        16% 90%,
+        60% 88%,
+        50% 10%;
+    background-size:
+        55px, 35px, 80px, 80px, 45px, 60px, 90px;
+    opacity:0.75;
+}
+
+/* ===== 헤더 ===== */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    border-bottom:1px solid rgba(178,34,34,0.4);
+    height:50px;
+    background:
+      rgba(240,236,225,0.96),
+      radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px);
+    background-size:3px 3px;
+}
+
+.logo-img{ height:36px; cursor:pointer; }
+
+.menu{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#555;
+}
+
+.menu a:hover{
+    color:#c40000;
+    font-weight:bold;
+}
+
+/* ===== 타이틀 ===== */
+.items-title{
+    font-family:'Pacifico', cursive;
+    font-size:40px;
+    color:#B22222;
+    text-align:center;
+    margin:55px 0 10px;
+}
+
+.items-sub{
+    text-align:center;
+    font-size:13px;
+    margin-bottom:40px;
+    color:#6b5c5c;
+}
+
+/* ===== 래퍼 ===== */
+.items-wrap{
+    max-width:1100px;
+    margin:0 auto 80px;
+    padding:0 40px 40px;
+}
+
+/* ===== 지그재그 섹션 ===== */
+.item-section{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    margin-bottom:70px;
+}
+
+.item-section:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+/* ✅ 이미지 박스 → 배경 제거 + 빨간 테두리만 */
+.item-img-box{
+    flex:0 0 300px;           /* ✅ 박스 크기 살짝 축소 */
+    height:300px;
+    border-radius:14px;
+    overflow:hidden;
+    background:transparent;  /* ✅ 흰 배경 제거 */
+    border:1px solid #B22222;
+}
+
+/* ✅ 이미지 크기 조금 더 작게 */
+.item-img-box img{
+    width:85%;                 /* ✅ 기존 100% → 줄임 */
+    height:auto;
+    display:block;
+    margin:30px auto 0;
+    object-fit:contain;
+    transition:transform 0.35s ease;
+}
+
+/* ✅ 호버 확대 */
+.item-img-box:hover img{
+    transform:scale(1.1);
+}
+
+/* ===== 텍스트 ===== */
+.item-text{
+    flex:1;
+    line-height:1.9;
+    font-size:13px;
+}
+
+.item-label{
+    font-family:'Pacifico', cursive;
+    font-size:24px;
+    color:#B22222;
+    margin-bottom:8px;
+}
+
+.item-tag{
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#aa8a8a;
+    margin-bottom:10px;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width:900px){
+    .items-wrap{ padding:0 20px 40px; }
+
+    .item-section{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .item-section:nth-child(even){
+        flex-direction:column;
+    }
+
+    .item-img-box{
+        width:100%;
+        max-width:340px;
+        height:240px;
+    }
+
+    .item-img-box img{
+        width:80%;
+    }
+
+    .item-text{
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ 헤더 -->
+<div class="header">
+    <a href="main.html">
+        <img src="logo1.png" class="logo-img" alt="logo">
+    </a>
+
+    <div class="menu">
+        <a href="prolog.html">prolog</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="items.html"><b>Items</b></a>
+        <a href="music.html">Music</a>
+        <a href="my.html">My</a>
+    </div>
+</div>
+
+<h1 class="items-title">My Items</h1>
+<p class="items-sub">요즘 가장 아끼는 물건들을 조용히 모아 둔 작은 리스트예요.</p>
+
+<div class="items-wrap">
+
+    <!-- item1 -->
+    <section class="item-section">
+        <div class="item-img-box">
+            <img src="item1.png" alt="Item 1">
+        </div>
+        <div class="item-text">
+            <div class="item-label">Item.1</div>
+            <div class="item-tag">daily favorite</div>
+           닥터마틴을 샀다.
+노란 스티치가 과해 보여서 흰 스티치로 골랐다.
+그때는 몰랐다......
+
+구매평에 발이 아프다는 얘기가 많았지만, 예쁘니까 괜찮겠다고 생각했다.
+처음 신고 나갔을 때는 괜찮았다.
+그런데 8시간 정도 걸었을 무렵부터 발이 너무 아파서, 더 이상 걷기 힘들어졌다.
+
+예쁘게만 보였던 구두는 이제 발이 아픈 구두로 기억된다.
+결국 한 번 더 신고, 지금은 장식품이 되었다.
+        </div>
+    </section>
+
+    <!-- item2 -->
+    <section class="item-section">
+        <div class="item-img-box">
+            <img src="item2.png" alt="Item 2">
+        </div>
+        <div class="item-text">
+            <div class="item-label">Item.2</div>
+            <div class="item-tag">sound & mood</div>
+          고3 실기 시험을 앞두고 있던 어느 날, 쓰던 에어팟이 갑자기 고장 났다.시험 전이라 예민해져 있던 터라, 그 작은 불편함도 크게 느껴졌다.
+
+그래서 평소 갖고 싶었던 에어팟 맥스를 결국 직접 사기로 했다.
+
+지금은 에어팟을 하나 더 구입해서 맥스를 자주 쓰지는 않지만,복잡한 공간에서 조용히 있고 싶을 때나, 생각을 정리하고 싶을 땐,여전히 맥스를 꺼내 쓴다.
+
+맥스를 끼면 세상과 단절되는 기분이 든다..
+        </div>
+    </section>
+
+    <!-- item3 -->
+    <section class="item-section">
+        <div class="item-img-box">
+            <img src="item3.png" alt="Item 3">
+        </div>
+        <div class="item-text">
+            <div class="item-label">Item.3</div>
+            <div class="item-tag">little comfort</div>
+        부산에서 일부러 서울까지 나를 만나러 와준 소중한 친구와 종로를 함께 걸었던 날.
+
+걷다가 우연히 핸드크림을 샀다. 2~3년 전에도 써봤던 제품인데, 그땐 이 향이 마음에 들지 않았던 기억이 난다.
+그런데 이번엔 이상하게 좋게 느껴졌다. 나이를 먹으면서, 취향도 이렇게 바뀌는 걸까..?
+
+그날, 종로에는 눈이 펑펑 내렸다.
+그 순간의 공기와 마음을 기억하고 싶어서, 이렇게 기록해 둔다.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

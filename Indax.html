@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Main</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+    font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:linear-gradient(180deg,#F3EEE6 0%,#EAE4DA 100%);
+    color:#333;
+    position:relative;
+    overflow-x:hidden;
+    transition:background 0.3s ease;
+}
+
+/* ✅ 원래 노이즈 그대로 */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,0.15) 1px, transparent 1px);
+    background-size:3px 3px;
+    opacity:0.3;
+}
+
+/* ✅ 손그림 그대로 */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+        url("st.png"),
+        url("st1.png"),
+        url("st2.png"),
+        url("st3.png"),
+        url("st4.png"),
+        url("st1.png"),
+        url("st2.png"),
+        url("st3.png"),
+        url("st4.png"),
+        url("st1.png"),
+        url("st.png");
+    background-repeat:no-repeat;
+    background-position:
+        3% 8%,
+        90% 10%,
+        14% 30%,
+        82% 38%,
+        5% 65%,
+        92% 68%,
+        22% 85%,
+        66% 86%,
+        45% 12%,
+        10% 35%,
+        55% 75%;
+    background-size:
+        70px,
+        25px,
+        35px,
+        110px,
+        60px,
+        40px,
+        20px,
+        65px,
+        50px,
+        80px;
+    opacity:0.7;
+}
+
+/* ✅ 썸네일 호버 시 배경 */
+body.bg-hover{
+    background:#FFF1EC;
+}
+
+/* ✅ ✅ ✅ 헤더 (프롤로그와 동일한 로고 구조) */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    border-bottom:2px solid #B22222;
+    height:50px;
+    background:
+      linear-gradient(rgba(240,236,225,0.9), rgba(240,236,225,0.9)),
+      radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
+    background-size:3px 3px;
+}
+
+/* ✅ 로고 */
+.logo-link{
+    display:flex;
+    align-items:center;
+}
+
+.logo-img{
+    height:36px;   /* 프롤로그랑 동일 */
+    width:auto;
+    cursor:pointer;
+    transition:opacity 0.2s ease;
+}
+
+/* ✅ 메뉴 */
+.menu{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#555;
+}
+
+.menu a:hover{
+    color:#c40000;
+    font-weight:bold;
+}
+
+.container{
+    width:75%;
+    margin:0 auto;
+    text-align:center;
+    padding-top:40px;
+}
+
+/* ✅ 메인 이미지 */
+.hero{
+    width:520px;
+    height:650px;
+    margin:40px auto 30px;
+    border-radius:8px;
+    background-image:url("1203.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    transition:transform 0.3s ease-in-out;
+    cursor:pointer;
+}
+
+.hero:hover{
+    transform:scale(1.03);
+}
+
+.title{
+    font-family:'Pacifico', cursive;
+    font-size:42px;
+    color:#B22222;
+    letter-spacing:2px;
+    text-align:center;
+    margin:20px 0 30px;
+}
+
+.thumb-box{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    margin-bottom:40px;
+}
+
+.thumb{
+    width:140px;
+    height:180px;
+    border:2px solid #B22222;
+    border-radius:6px;
+    background:#fff;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform 0.3s ease-in-out;
+}
+
+.thumb img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    background:#fff;
+}
+
+.thumb.active{
+    transform:scale(1.08);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <!-- ✅ 로고 클릭 시 main.html (자기 자신) -->
+    <div class="top-logo">
+        <a href="main.html" class="logo-link">
+            <img src="logo1.png" alt="로고" class="logo-img">
+        </a>
+    </div>
+
+    <div class="menu">
+        <a href="prolog.html">prolog</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="items.html">Items</a>
+        <a href="music.html">Music</a>
+        <a href="my.html">My</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="hero"></div>
+
+    <div class="title">My Favorite!</div>
+
+    <div class="thumb-box">
+        <div class="thumb">
+            <img src="item1.png">
+        </div>
+        <div class="thumb">
+            <img src="item2.png">
+        </div>
+        <div class="thumb">
+            <img src="item3.png">
+        </div>
+    </div>
+
+</div>
+
+<script>
+const thumbs = document.querySelectorAll('.thumb');
+
+thumbs.forEach(thumb => {
+
+    thumb.addEventListener('mouseenter', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        document.body.classList.add('bg-hover');
+    });
+
+    thumb.addEventListener('mouseleave', () => {
+        thumb.classList.remove('active');
+        document.body.classList.remove('bg-hover');
+    });
+
+});
+</script>
+
+</body>
+</html>
